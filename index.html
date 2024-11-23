@@ -1,0 +1,209 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+	<title></title>  
+	<meta charset = "utf-8">  
+	<meta name = "viewport" content = "width=device-width, initial-scale=1">  
+	<link href = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel = "stylesheet">  
+	<script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>  
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	
+	<link href = "style/style.css" rel = "stylesheet">  
+	
+	<style>  
+	.container, body{
+		background:#765965;
+	}
+	
+	.container{
+		margin-top: 0px;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		height: 100%;
+	}
+	
+	body{
+		background-image: url("img/flowers.png");
+	
+	}
+	
+	h2, h1{
+		font-family: "Dancing Script", cursive;
+	}
+	
+	h1 {
+		font-size: 100px
+	}
+	
+	.sister {
+		cursor: pointer;
+		background: #947582;
+		transition: background-color 0.3s ease;
+		border-style: dotted;
+		border-color: white;
+		border: 3px dotted;
+		color:white
+	}
+
+	.sister:hover {
+		background: #8a6d79;
+	}
+	
+	p{
+		font-family: "Titillium Web", sans-serif;
+		font-weight: 300;
+		font-style: italic;
+		font-size: 16px;
+	}
+	
+	.name {
+	  position: relative;
+	  display: inline-block;
+	  overflow: hidden;
+	}
+
+	.name::after {
+	  content: '';
+	  position: absolute;
+	  left: 0;
+	  bottom: 0;
+	  width: 100%;
+	  height: 2px; /* Grosor del subrayado */
+	  background: white; /* Color del subrayado */
+	  transform: translateX(-100%);
+	  transition: transform 0.3s ease;
+	}
+
+	.sister:hover .name::after {
+	  transform: translateX(0);
+	}
+	
+	.separator {
+		width: 100%;
+		height: 50px;
+		position: relative; /* Necesario para posicionar ::before y ::after */
+		margin-bottom: 40px;
+	}
+
+	.separator::before, .separator::after {
+		content: "";
+		display: block; /* Asegura que el pseudo-elemento se muestre */
+		width: 100%;
+		height: 50px;
+		position: absolute; /* Permite posicionar ::before y ::after */
+		top: 0;
+	}
+
+	.separator::after {
+		background-image: url('img/serigrafia.svg');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right; /* Imagen normal a la derecha */
+	}
+
+	.separator::before {
+		background-image: url('img/serigrafia.svg');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: left; /* Imagen espejo a la izquierda */
+		left: -74%;
+		transform: scaleX(-1); /* Espejo horizontal */
+	}
+	
+	.card{
+		border-radius: 40px;
+	}
+
+	.textsister{
+		align-content: center;
+		padding-left: 20px;
+	}
+	
+	a{
+		text-decoration: none !important;
+	}
+	
+	</style>  
+</head>  
+
+<body style="">  
+
+	<div class='container'>
+		<div class="mt-5" id="title" style="text-align:center;">
+			<h1 style="color:white;"> Little Women Workshop </h1>  
+		</div>
+		
+		<div class="separator"></div>
+		
+		<div style="text-align:center;">
+			<div style="color:white;">		
+				<p>
+					Welcome to Little Women Workshops, a creative workshop inspired by Louisa May Alcott’s <i>Little Women</i>, created by Júlia Prados and Alba Tonijuan, two English Studies students. Our website is a tribute to the enduring legacy of the March sisters: Amy, Meg, Beth, and Jo.
+				</p>
+				<hr>
+				<p>
+					Each page of our site is dedicated to one of the beloved sisters, offering  workshops that capture their distinct personalities, talents, and dreams. Whether you're drawn to Amy’s artistic flair, Meg’s domestic grace, Beth’s musical soul, or Jo’s literary ambition, you'll find an engaging activity that brings their world to life and invites you to explore your own creativity.
+				</p>
+			</div>
+		</div>
+		
+		<a href="amy.html">
+			<div class="card mt-5 sister amy">
+			  <div class="card-body">
+				<blockquote class="blockquote mb-0">
+					<div style="display:flex;">
+						<div class="col-2"><img src="img/amy.png" width="200px" alt="amy"></div>
+						<div class="col-10 textsister"><h2 class="name">Amy</h2><p>Explore Amy March’s artistic spirit with a selection of images to paint. Let your creativity shine as you bring these designs to life!</p></div>
+					</div>
+				</blockquote>
+			  </div>
+			</div>
+		</a>
+		
+		<a href="meg.html">
+			<div class="card mt-5 sister meg">
+			  <div class="card-body">
+				<blockquote class="blockquote mb-0">
+					<div style="display:flex;">
+						<div class="col-2"><img src="img/meg.png" width="200px" alt="meg"></div>
+						<div class="col-10 textsister"><h2 class="name">Meg</h2><p>Discover Meg March’s culinary charm with a collection of recipes featured in Little Women. Each recipe is accompanied by quotes from the book, inviting you to savor the joys of cooking just like Meg!</p></div>
+					</div>
+				</blockquote>
+			  </div>
+			</div>
+		</a>
+		
+		<a href="jo.html">
+			<div class="card mt-5 sister jo">
+			  <div class="card-body">
+				<blockquote class="blockquote mb-0">
+					<div style="display:flex;">
+						<div class="col-2"><img src="img/jo.png" width="200px" alt="jo"></div>
+						<div class="col-10 textsister"><h2 class="name">Jo</h2><p>Dive into Jo March’s world with a selection of journaling prompts inspired by her adventurous spirit. Use these prompts to reflect, create, and express your thoughts just like Jo!</p></div>
+					</div>
+				</blockquote>
+			  </div>
+			</div>
+		</a>
+		
+		<a href="beth.html">
+			<div class="card mt-5 mb-5 sister beth">
+			  <div class="card-body">
+				<blockquote class="blockquote mb-0">
+					<div style="display:flex;">
+						<div class="col-2"><img src="img/beth.png" width="200px" alt="beth"></div>
+						<div class="col-10 textsister"><h2 class="name">Beth</h2><p>Explore Beth March’s musical world with a playlist of film soundtracks and sheet music for piano. Connect with her love of music and let your talents shine!</p></div>
+					</div>
+				</blockquote>
+			  </div>
+			</div>
+		</a>
+		
+	</div> 
+  
+</body>  
+</html>  

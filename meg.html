@@ -1,0 +1,291 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+	<title></title>  
+	<meta charset = "utf-8">  
+	<meta name = "viewport" content = "width=device-width, initial-scale=1">  
+	<link href = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel = "stylesheet">  
+	<script src = "https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>  
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+	 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	
+	<link href = "style/style.css" rel = "stylesheet">  
+	
+	<style>  
+	.container, body{
+		background:#eba29d;
+	}
+	
+	.container{
+		margin-top: 0px;
+		padding-top: 30px;
+		padding-bottom: 30px;
+		height: 100%;
+	}
+	
+	body{
+		background-image: url("img/fondomeg.png");
+		background-repeat: repeat;
+		background-size: 400px;
+	}
+	
+	h2, h1{
+		font-family: "Dancing Script", cursive;
+	}
+	
+	h1 {
+		font-size: 80px
+	}
+	
+	.content {
+		background: #C87D77;
+		transition: background-color 0.3s ease;
+		border-style: dotted;
+		border-color: white;
+		border: 3px dotted;
+		color:white
+	}
+	
+	p{
+		font-family: "Titillium Web", sans-serif;
+		font-weight: 300;
+		font-style: italic;
+		font-size: 16px;
+	}
+		
+	.separator {
+		width: 100%;
+		height: 50px;
+		position: relative; /* Necesario para posicionar ::before y ::after */
+		margin-bottom: 40px;
+	}
+
+	.separator::before, .separator::after {
+		content: "";
+		display: block; /* Asegura que el pseudo-elemento se muestre */
+		width: 100%;
+		height: 50px;
+		position: absolute; /* Permite posicionar ::before y ::after */
+		top: 0;
+	}
+
+	.separator::after {
+		background-image: url('img/serigrafia.svg');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: right; /* Imagen normal a la derecha */
+	}
+
+	.separator::before {
+		background-image: url('img/serigrafia.svg');
+		background-size: contain;
+		background-repeat: no-repeat;
+		background-position: left; /* Imagen espejo a la izquierda */
+		left: -74%;
+		transform: scaleX(-1); /* Espejo horizontal */
+	}
+	
+	.card{
+		border-radius: 40px;
+	}
+	
+	a{
+
+		text-decoration: none !important;
+	}
+	
+	.button-container {
+	  display: flex;
+	  align-items: center;
+	  justify-content: space-between; /* Espacio entre los botones */
+	}
+
+	.back-button, .forward-button {
+	  cursor: pointer; /* Cambia el cursor al pasar por encima */
+	}
+
+	.back-image, .forward-image {
+	  width: 50px; /* Tamaño de las imágenes */
+	  transition: transform 0.3s ease; /* Transición suave */
+	  margin-right: 10px; /* Espacio entre la imagen y el contenido */
+	}
+
+	.back-button:hover .back-image, .forward-button:hover .forward-image{
+	  transform: scale(1.1); /* Aumenta el tamaño de la imagen al hacer hover */
+	}
+	
+	.forward-button:hover .forward-image{
+	  transform: scale(1.1); /* Aumenta el tamaño de la imagen al hacer hover */
+	}
+
+	.center-button {
+	  flex: 1; /* Ocupa el espacio disponible en el centro */
+	  text-align: center; /* Centra el texto */
+	  position: relative; /* Necesario para el pseudo-elemento */
+	}
+
+	.center-link {
+	  padding: 10px 20px;
+	  font-family: "Dancing Script", cursive;
+	  color: white !important; /* Color del texto */
+	  text-decoration: none; /* Sin subrayado */
+	  transition: color 0.3s; /* Transición suave del color */
+	  font-size: 20px;
+	}
+
+	.center-link::after {
+	  content: '';
+	  position: absolute;
+	  left: 50%;
+	  bottom: 0; /* Coloca el subrayado en la parte inferior */
+	  width: 100%;
+	  height: 2px; /* Grosor del subrayado */
+	  background: white; /* Color del subrayado */
+	  transform: translateX(-50%) scaleX(0); /* Inicialmente oculto */
+	  transition: transform 0.3s ease; /* Transición suave */
+	}
+
+	.center-link:hover::after {
+	  transform: translateX(-50%) scaleX(1); /* Muestra el subrayado al hacer hover */
+	}
+	
+	.videoRecipe {
+		  display: inline-block;
+		  transition: transform 0.2s ease-in-out;
+		  cursor: pointer;
+		}
+
+		.videoRecipe:hover {
+		  animation: swing 1s ease-in-out infinite;
+		}
+
+		@keyframes swing {
+		  0% { transform: rotate(0deg); }
+		  25% { transform: rotate(15deg); }
+		  50% { transform: rotate(-15deg); }
+		  75% { transform: rotate(10deg); }
+		  100% { transform: rotate(0deg); }
+		}
+
+	
+	</style>  
+</head>  
+
+<body style="">  
+
+	<div class='container'>
+		<div class="button-container">
+		  <div class="back-button">
+			<a href="amy.html">
+			  <img src="img/back.png" alt="Back" class="back-image">
+			</a>
+		  </div>
+		  
+		  <div class="center-button">
+			<a href="index.html" class="center-link">Home</a>
+		  </div>
+	
+		  <div class="forward-button">
+			<a href="jo.html">
+			  <img src="img/forward.png" alt="Forward" class="forward-image mirror">
+			</a>
+		  </div>
+		</div>
+
+		
+		<div class="mt-5" id="title" style="text-align:center;">
+			<img src="img/megPink.png" width="150px" alt="meg">
+			<h1 style="color:white;"> Meg March </h1>  
+		</div>
+		
+		<div class="separator"></div>
+		
+		<div style="text-align:center;">
+			<div style="color:white;">		
+				<p>
+					Discover the heartwarming flavors of the March family home with our collection of 10 delightful recipes straight from the pages of Louisa May Alcott’s Little Women. This website is dedicated to Meg March, the nurturing and talented homemaker of the family. Each recipe is accompanied by the corresponding quote from the book, allowing you to cook up the same delicious dishes enjoyed by the March sisters. Whether you’re hosting a gathering or simply craving a taste of classic comfort food, these recipes will transport you to the cozy and loving atmosphere of the March household.
+				</p>
+			</div>
+		</div>
+		
+		
+		<div class="card mt-5 content">
+		  <div class="card-body">
+			<blockquote class="blockquote mb-0">
+				<div style="display:flex;justify-content:center;">
+					
+					<img src="img/cookbook.png" usemap="#image-map">
+
+					<map name="image-map">
+						<area target="_blank" alt="" title="" href="img/Recipes/blancmange.pdf" coords="167,93,52" shape="circle">
+						<area target="_blank" alt="" title="" href="img/Recipes/breadpudding.pdf" coords="288,176,57" shape="circle">
+						<area target="_blank" alt="" title="" href="img/Recipes/buckwheatpancakes.pdf" coords="177,251,62" shape="circle">
+						<area target="_blank" alt="" title="" href="img/Recipes/countrywhitebread.pdf" coords="282,343,57" shape="circle">
+						<area target="_blank" alt="" title="" href="img/Recipes/frenchhotchocolate.pdf" coords="168,410,53" shape="circle">
+						<area target="_blank" alt="" title="" href="img/Recipes/gingerbread.pdf" coords="572,104,51" shape="circle">
+						<area target="_blank" alt="" title="" href="img/Recipes/lemonade.pdf" coords="456,181,53" shape="circle">
+						<area target="_blank" alt="" title="" href="img/Recipes/muffins.pdf" coords="566,258,53" shape="circle">
+						<area target="_blank" alt="" title="" href="img/Recipes/strawberryicecream.pdf" coords="442,334,56" shape="circle">
+						<area target="_blank" alt="" title="" href="img/Recipes/turnovers.pdf" coords="564,404,61" shape="circle">
+					</map>
+					
+				</div>
+			</blockquote>
+		  </div>
+		</div>
+		
+		<div class="card mt-5 content">
+		  <div class="card-body d-flex" style="justify-content: space-around;align-items: center;">
+			<div>
+				<img style="width: 200px;" src="img/chocolatecup.png" id="chocolatecup" vid="NLQfzqRKH4g" class="videoRecipe">
+			</div>
+			<div>
+				<img style="width: 150px;" src="img/muffin.png" id="muffin" vid="gUlyH1Loi6c" class="videoRecipe">
+			</div>
+		  </div>
+		</div>
+		
+		
+	</div> 
+    
+	<!-- Modal -->
+	<div class="modal fade" id="videoModal" tabindex="-1" aria-labelledby="videoModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="videoModalLabel">Video Recipe</h5>
+					<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+				</div>
+				<div class="modal-body">
+					<iframe id="videoIframe" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			var videoElements = document.querySelectorAll('.videoRecipe');
+			var videoModal = new bootstrap.Modal(document.getElementById('videoModal'));
+			var videoIframe = document.getElementById('videoIframe');
+
+			videoElements.forEach(function(element) {
+				element.addEventListener('click', function() {
+					var videoId = this.getAttribute('vid');
+					var videoUrl = 'https://www.youtube.com/embed/' + videoId;
+					videoIframe.setAttribute('src', videoUrl);
+					videoModal.show();
+				});
+			});
+
+			document.getElementById('videoModal').addEventListener('hidden.bs.modal', function() {
+				videoIframe.setAttribute('src', '');
+			});
+		});
+	</script>
+	
+</body>  
+</html>  
