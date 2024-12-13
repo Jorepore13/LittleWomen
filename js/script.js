@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const swiper = new Swiper('.swiper-container', {
+    const swiper = new Swiper('.swiper-container-nogallery', {
         effect: 'cards',
         grabCursor: true,
         loop: false,
@@ -17,7 +17,17 @@ document.addEventListener('DOMContentLoaded', function () {
         },
     });
 
-        const overlay = document.getElementById('overlay');
+    const swiper2 = new Swiper('.swiper-container-gallery', {
+      slidesPerView: 3,
+      grid: {
+        rows: 3,
+      },
+      spaceBetween: 20
+    });
+	
+	console.log(swiper2)
+
+    const overlay = document.getElementById('overlay');
     const overlayImage = document.getElementById('overlayImage');
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
